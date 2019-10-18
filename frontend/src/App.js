@@ -31,7 +31,7 @@ class App extends React.Component {
     var listDisplay;
 
     if (this.state.list.length > 0) {
-      listDisplay = this.state.list.map((item, i) => <ListItem itemName={ item } onAddButtonClick={ this.AddItem } onRemoveButtonClick={ this.RemoveItem } /> )
+      listDisplay = this.state.list.map((item, i) => <ListItem itemName={ item } onAddButtonClick={ this.AddItem } onRemoveButtonClick={() => this.RemoveItem(i) } /> )
     }
     else {
       listDisplay = <p class="noselect">There is no items to show!</p>
@@ -84,7 +84,7 @@ function ListItem(props) {
       <p>
         { props.itemName }
       </p>
-      <input class="ImageButton" type="image" src={deleteIcon} onClick={ props.onRemoveButtonClick }/>
+      <input class="ImageButton" type="image" src={ deleteIcon } onClick={ props.onRemoveButtonClick }/>
     </div>
   );
 }

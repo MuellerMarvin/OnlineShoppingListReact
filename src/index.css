@@ -1,3 +1,7 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,4 +14,63 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.noselect, .ImageButton {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+#root {
+  text-align: center;
+  width: 100%;
+}
+
+.App {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.ListWrapper {
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.ListItem {
+  width: 100%;
+  display: inline-block;
+  border: 1px solid black;
+  margin-bottom: -1px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.ListItem > p {
+  display: inline-block;
+  text-align: left;
+  width: calc(100% - 25px);
+  height: 25px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.ImageButton {
+  padding: 0px;
+  width: 25px;
+  height: 100%;
+  vertical-align: middle;
 }

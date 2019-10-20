@@ -16,6 +16,10 @@ class App extends React.Component {
   }
 
   AddItem(itemName) {
+    if (itemName == '' || itemName == undefined) {
+      return;
+    }
+
     var newList = this.state.list.slice();
     newList.push(itemName);
     this.setState({ list: newList });

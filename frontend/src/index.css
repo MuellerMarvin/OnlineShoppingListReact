@@ -1,5 +1,6 @@
 * {
   font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
 }
 
 body {
@@ -40,30 +41,45 @@ code {
 .ListWrapper {
   text-align: center;
   vertical-align: middle;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .ItemList {
   display: inline-block;
   margin: 0 auto;
-  width: 210px;
+  width: 350px;
+  border: 1px solid black;
 }
 
 .AddDialog {
   border: 1px solid black;
-  border-radius: 10px;
-  width: 250px;
+  width: 350px;
   margin: 0 auto;
+  padding: 0px;
 }
 
 .AddDialog > input {
-  width: calc(100% - 55px);
-  text-align: center;
+  width: calc(100% - 60px);
+  height: 40px;
+  text-align: left;
+  margin-left: 10px;
+  font-size: large;
 }
 
 .AddDialog > button {
   background: none;
   border: none;
+  font-size: 16px;
+  height: 44px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  margin-right: -4px;
+  border: 1px solid black;
+}
+
+.AddDialog > button:hover {
+  background-color: rgb(240, 240, 240);
+  transition: 0.3s;
 }
 
 h1 {
@@ -73,10 +89,11 @@ h1 {
 .ListItem {
   width: 100%;
   display: inline-block;
-  border: 1px solid black;
   margin-bottom: -1px;
   height: 40px;
   vertical-align: middle;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
 }
 
 .ListItem > p {
@@ -88,7 +105,13 @@ h1 {
   text-align: center;
   padding: 0px;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 7px;
+}
+
+/* This class is meant for the last item in a list,
+to prevent it from having a bottom border */
+.ListItem-NoBorder {
+  border: none;
 }
 
 .ImageButton {

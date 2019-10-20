@@ -42,7 +42,9 @@ class App extends React.Component {
         <h1>Public Shoppinglist</h1>
         <AddDialog onAddButtonClick={ this.AddItem }/>
         <div className="ListWrapper">
-          { listDisplay }
+          <div className="ItemList">
+            { listDisplay }
+          </div>
         </div>
       </div>
     );
@@ -71,7 +73,7 @@ class AddDialog extends React.Component {
   render() {
     return (
       <div className="AddDialog">
-        <input id="AddDialogTextField" type="text" onKeyUp={ this.checkForEnter }/>
+        <input id="AddDialogTextField" placeholder="a new entry..." type="text" onKeyUp={ this.checkForEnter }/>
         <button onClick={() => this.runAddEvent() }>Add</button>
       </div>
     );

@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      list: [ 'apples', 'bananas', 'cucumber', 'coconut', 'orange', 'pineapple', 'lemons' ],
+      list: [ 'apples', 'bananas', 'cucumbers', 'coconuts', 'oranges', 'pineapples', 'lemons' ],
     };
 
     this.AddItem = this.AddItem.bind(this);

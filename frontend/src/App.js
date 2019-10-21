@@ -3,15 +3,15 @@ import logo from './logo.svg';
 import deleteIcon from './delete-24px.svg'
 import './App.css';
 const axios = require('axios').default;
+axios.defaults.baseURL = 'http://localhost:9000';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     
     var requestedList = [];
-    axios.get('localhost:9000/lists')
+    axios.get('/lists')
     .then(function (response) {
-      console.log("Response:")
       console.log(response);
     })
     .catch(function (error) {

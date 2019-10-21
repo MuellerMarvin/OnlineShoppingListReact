@@ -10,22 +10,29 @@ axios.defaults.baseURL = 'http://localhost:9000';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    
-    var requestedList = [];
-    axios.get('/lists')
+
+    this.state = {
+      list: [],
+    }
+
+    this.AddItem = this.AddItem.bind(this);
+    this.RemoveItem = this.RemoveItem.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+  }
+
+  async componentDidMount() {
+    let responseList = []; // provide an empty list
+    await axios.get('/lists')
     .then(function (response) {
-      console.log(response);
+      responseList = response.data.list.slice()
     })
     .catch(function (error) {
       console.log(error);
     });
 
-    this.state = {
-      list: requestedList,
-    };
-
-    this.AddItem = this.AddItem.bind(this);
-    this.RemoveItem = this.RemoveItem.bind(this);
+    this.setState({
+      list: responseList,
+    });
   }
 
   AddItem(itemName) {

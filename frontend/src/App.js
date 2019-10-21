@@ -43,12 +43,27 @@ class App extends React.Component {
     var newList = this.state.list.slice();
     newList.push(itemName);
     this.setState({ list: newList });
+    this.UpdateServer(newList);
   }
 
   RemoveItem(index) {
     var newList = this.state.list.slice();
     newList.splice(index, 1);
     this.setState({ list: newList });
+    this.UpdateServer(newList);
+  }
+
+  UpdateServer(list) {
+    axios.post('/lists', {
+      list: list
+    })
+    .then(function(response) {
+      this.setState(this.response.list)
+    })
+    .catch(function(error) {
+      console.log("There was an error updating the server.");
+      console.log(error);
+    });
   }
 
   render() {

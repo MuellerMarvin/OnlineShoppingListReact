@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-var list = [ 'apples', 'bananas', 'cucumbers', 'coconuts', 'oranges', 'pineapples', 'lemons' ];
+var list = [ 'apples', 'cucumbers', 'coconuts', 'oranges', 'pineapples', 'lemons' ];
 
 router.get('/', (req, res, next) => {
     console.log("Received GET request on '/lists'")
@@ -11,17 +11,11 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-    console.log("Received POST request on '/lists'")
+    console.log("Received POST request on '/lists'");
+    list = req.body.list;
     res.status(200).json({
-        message: 'Handling POST requests to /lists',
+        list: list,
     });
 });
-
-router.patch('/'), (req, res, next) => {
-    console.log("Received PATCH request on '/lists'")
-    res.status(200).json({
-        message: 'Handling PATCH requests to /lists',
-    });
-}
 
 module.exports = router;

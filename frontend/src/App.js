@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import deleteIcon from './delete-24px.svg'
 import './App.css';
 const axios = require('axios').default;
+
+// set some defaults for axios
 axios.defaults.baseURL = 'http://localhost:9000';
 
 class App extends React.Component {

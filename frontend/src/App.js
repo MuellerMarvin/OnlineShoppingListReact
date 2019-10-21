@@ -2,13 +2,24 @@ import React from 'react';
 import logo from './logo.svg';
 import deleteIcon from './delete-24px.svg'
 import './App.css';
+const axios = require('axios').default;
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    
+    var requestedList = [];
+    axios.get('localhost:9000/lists')
+    .then(function (response) {
+      console.log("Response:")
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 
     this.state = {
-      list: [ 'apples', 'bananas', 'cucumbers', 'coconuts', 'oranges', 'pineapples', 'lemons' ],
+      list: requestedList,
     };
 
     this.AddItem = this.AddItem.bind(this);

@@ -24,7 +24,7 @@ class App extends React.Component {
     let responseList = []; // provide an empty list
     await axios.get('/lists')
     .then(function (response) {
-      responseList = response.data.list.slice()
+      responseList = response.data.list.slice();
     })
     .catch(function (error) {
       console.log(error);
@@ -70,7 +70,10 @@ class App extends React.Component {
     var listDisplay;
 
     if (this.state.list.length > 0) {
-      listDisplay = this.state.list.map((item, i) => <ListItem itemName={ item } onAddButtonClick={ this.AddItem } onRemoveButtonClick={() => this.RemoveItem(i) } /> )
+      listDisplay = this.state.list.map((item, i) => <ListItem  itemName={ item }
+                                                                onAddButtonClick={ this.AddItem }
+                                                                onRemoveButtonClick={() => this.RemoveItem(i) }
+                                                                /> )
     }
     else {
       listDisplay = <p class="noselect">There is no items to show!</p>
